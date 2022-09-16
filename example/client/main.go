@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-
 	"github.com/ltfred/iec61850"
 	"github.com/ltfred/iec61850/example/client/config"
 	"github.com/ltfred/iec61850/example/client/worker"

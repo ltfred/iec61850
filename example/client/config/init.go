@@ -1,7 +1,6 @@
 package config
 
 import (
-	"io"
 	"os"
 	"strconv"
 
@@ -43,18 +42,18 @@ func initLogger() {
 		logger.Formatter = &logrus.JSONFormatter{}
 	}
 
-	f, err := os.OpenFile("./logs/iec104.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644) // 创建一个log日志文件
-	if err != nil {
-		logger.Fatalln("打开日志文件失败")
-	}
-	writers := []io.Writer{
-		f}
+	//f, err := os.OpenFile("./logs/iec.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644) // 创建一个log日志文件
+	//if err != nil {
+	//	logger.Fatalln("打开日志文件失败")
+	//}
+	//writers := []io.Writer{
+	//	f}
 	//debug模式下输出到控制台
-	if Debug {
-		writers = append(writers, os.Stdout)
-	}
-	fileAndStdoutWriter := io.MultiWriter(writers...)
+	//if Debug {
+	//	writers = append(writers, os.Stdout)
+	//}
+	//fileAndStdoutWriter := io.MultiWriter(writers...)
 
-	logger.Out = fileAndStdoutWriter
+	//logger.Out = fileAndStdoutWriter
 	Logger = logger
 }
